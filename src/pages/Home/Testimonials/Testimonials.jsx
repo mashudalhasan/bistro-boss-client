@@ -11,7 +11,7 @@ import { FaQuoteLeft } from "react-icons/fa";
 const Testimonials = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("reviews.json")
+    fetch("http://localhost:5000/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
@@ -30,7 +30,7 @@ const Testimonials = () => {
                 value={review.rating}
                 readOnly
               />
-              <FaQuoteLeft className="text-6xl"/>
+              <FaQuoteLeft className="text-6xl" />
               <p className="">{review.details}</p>
               <h3 className="text-2xl text-yellow-600">{review.name}</h3>
             </div>
