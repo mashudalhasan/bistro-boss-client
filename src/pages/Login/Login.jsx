@@ -8,6 +8,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
   const [disabled, setDisabled] = useState(true);
@@ -114,7 +115,7 @@ const Login = () => {
               <div className="form-control mt-6">
                 {/* TODO: make button disabled for captcha */}
                 <input
-                  disabled={false}
+                  disabled={disabled}
                   type="submit"
                   value="Login"
                   className="btn btn-primary"
@@ -127,6 +128,7 @@ const Login = () => {
                   </small>
                 </p>
               </div>
+              <SocialLogin></SocialLogin>
             </form>
           </div>
         </div>
