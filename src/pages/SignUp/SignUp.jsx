@@ -14,7 +14,7 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
 
-  const { createUser, updateUserProfile, logOut } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -46,9 +46,10 @@ const SignUp = () => {
                   showConfirmButton: false,
                   timer: 1500,
                 });
-                logOut().then(() => {
-                  navigate(from, { replace: true });
-                });
+                // logOut().then(() => {
+                //   navigate(from, { replace: true });
+                // });
+                navigate(from, { replace: true });
               }
             });
         })

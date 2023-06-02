@@ -12,12 +12,14 @@ import {
   FaBars,
 } from "react-icons/fa";
 import useCart from "../hooks/useCart";
+import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
   const [cart] = useCart();
 
   // TODO: load data from the server to have dynamic isAdmin based on data
-  const isAdmin = true;
+  // const isAdmin = true;
+  const [isAdmin] = useAdmin();
 
   return (
     <div className="drawer drawer-mobile gap-5">
@@ -44,8 +46,8 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/reservations">
-                  <FaUtensils /> Add Items
+                <NavLink to="/dashboard/addItem">
+                  <FaUtensils /> Add an Item
                 </NavLink>
               </li>
               <li>
